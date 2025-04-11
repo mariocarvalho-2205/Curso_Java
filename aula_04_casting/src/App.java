@@ -1,6 +1,15 @@
 public class App {
     public static void main(String[] args) throws Exception {
-       
+        // compilando o codigo
+        // javac nome_classe_.java / O terminal precisa estar na pasta onde o arquivo foi criado
+        // executando o codigo
+        // java nome_classe_
+        // ou
+        // javac -d . nome_classe_.java
+        // java nome_classe_
+
+        
+
         // casting é quando convertemos o tipo valor de uma variavel em outro tipo
         // casting implicito
         // Exemplo: double num1 = 10.2

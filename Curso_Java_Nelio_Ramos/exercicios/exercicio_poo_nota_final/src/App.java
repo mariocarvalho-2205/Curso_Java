@@ -32,5 +32,6 @@ public class App {
             System.out.println("FAILED");
             System.out.printf("MISSING %.2f POINTS", student.missingPoints());
         }
+        sc.close();
     }
 }

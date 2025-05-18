@@ -1,6 +1,7 @@
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 
 public class App {
@@ -20,7 +21,7 @@ public class App {
 
         LocalDate d04 = LocalDate.parse("2025-04-30");  // passando o formado da data
         LocalDateTime d05 = LocalDateTime.parse("2025-04-30T08:23:00");  // passando a data e hora como texto
-        Instant d06 = Instant.parse("2025-04-30T08:27:00Z");
+        Instant d06 = Instant.parse("2025-04-30T16:24:00Z");
         Instant d07 = Instant.parse("2025-04-30T08:27:00-03:00"); // passando o fuso horario
         // o localDate e o localDateTime ja utiliza o toString no final como padrão
         LocalDate d08 = LocalDate.parse("02/05/2025", fmt1);  // passando a data e hora como texto
@@ -40,5 +41,14 @@ public class App {
         System.out.println(d09);
         System.out.println(d10);
         System.out.println(d11);
+
+        // para fazer a conversao para texto do instant precisa passar o .withZone(ZoneId.systemDefault())
+        // dessa forma ele pega o fuso horario do computador
+        DateTimeFormatter fmt3 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm").withZone(ZoneId.systemDefault());
+        System.out.println("d06 convertido em texto" + fmt3.format(d06));
+
+        
+        
+
     }
 }
